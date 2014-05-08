@@ -1,4 +1,4 @@
-var RoadMap = require('../main').RoadMap;
+var RoadMap = require('../RoadMap').RoadMap;
 
 //Set target root url.
 RoadMap.setConfig({root: 'http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first'});
