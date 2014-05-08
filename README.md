@@ -22,10 +22,10 @@ var RoadMap = require('RoadMap').RoadMap;
 Let's load the w3c ajax example page and get the data from back-end after pressing the button.
 the website URL: http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first
 
-### Set target root url
+### 1. Set target root url
 ```RoadMap.setConfig({root: 'http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first'});```
 
-### Define the steps 
+### 2. Define the steps 
 ```JavaScript
 var steps = [];
 
@@ -63,7 +63,7 @@ steps.push({
 RoadMap.setSteps(steps);
 ```
 
-### Set ending callback function (Optional)
+### 3. Set ending callback function (Optional)
 this function will be called when all processes have done
 ```JavaScript
 //Set callback function when all things are done.
@@ -72,7 +72,7 @@ RoadMap.setEndFunction(function () {
 });
 ```
 
-### Run RoadMap
+### 4. Run RoadMap
 ```JavaScript
 //Rock the RoadMap!
 RoadMap.run();
