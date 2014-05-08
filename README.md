@@ -13,9 +13,15 @@ RoadMap.js provide a way to easily crawl the applications that you only need to 
 
 ##Usage
 
+###Include library
 ```JavaScript
 var RoadMap = require('RoadMap').RoadMap;
 ```
+
+### Set steps
+For every step, there are two function you need to specify: ```condition``` and ```nextStep```.
+- ```condition``` is use for setting the situation that you think this step is ready. ex. when the loading image is ```display: none```, I think this page is ready.
+- ```nextStep``` is use for when page is ready what you are going to do. ex. the page is ready, then I click the button and wait for the data appear. Then you may set the second step with condition to confirm the data appearing. 
 
 ##Example
 
@@ -78,8 +84,13 @@ RoadMap.setEndFunction(function () {
 });
 ```
 
-### 4. Run RoadMap
+### 4. Rock RoadMap
 ```JavaScript
 //Rock the RoadMap!
 RoadMap.run();
 ```
+
+### 5. Save the file and Run
+save as ```example.js```
+then
+```Phantomjs example.js```
