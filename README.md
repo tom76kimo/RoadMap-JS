@@ -94,3 +94,5 @@ RoadMap.run();
 save as ```example.js```
 then
 ```Phantomjs example.js```
+
+You can get this example code at ```examples/pressButton.js```
