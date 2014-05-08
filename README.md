@@ -16,3 +16,64 @@ RoadMap.js provide a way to easily crawl the applications that you only need to 
 ```JavaScript
 var RoadMap = require('RoadMap').RoadMap;
 ```
+
+##Example
+
+Let's load the w3c ajax example page and get the data from back-end after pressing the button.
+the website URL: http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first
+
+### Set target root url
+```RoadMap.setConfig({root: 'http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first'});```
+
+### Define the steps 
+```JavaScript
+var steps = [];
+
+//step1: Confirm load root page and iframe is also ready, then push the button.
+steps.push({
+    condition: function () {
+        //ensure the iframe is ready by checking the #myDiv is existed
+        return RoadMap.domHandle(function () {
+            return ($('iframe').contents().find('#myDiv') !== null);
+        });
+    },
+    nextStep: function () {
+        RoadMap.domHandle(function () {
+            $('iframe').contents().find('button').click();
+        });
+    }
+});
+
+//step2: Confirm data has loaded by ajax after pushing the button, then get the data in #myDiv.
+steps.push({
+    condition: function () {
+        return RoadMap.domHandle(function () {
+            return ($('iframe').contents().find('#myDiv').find('p') !== null);
+        });
+    },
+    nextStep: function () {
+        var html = RoadMap.domHandle(function () {
+            return $('iframe').contents().find('#myDiv').html();
+        });
+        console.log(html);
+    }
+});
+
+//Set steps
+RoadMap.setSteps(steps);
+```
+
+### Set ending callback function (Optional)
+this function will be called when all processes have done
+```JavaScript
+//Set callback function when all things are done.
+RoadMap.setEndFunction(function () {
+    console.log('All things done.');
+});
+```
+
+### Run RoadMap
+```JavaScript
+//Rock the RoadMap!
+RoadMap.run();
+```
