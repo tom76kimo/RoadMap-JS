@@ -25,7 +25,7 @@ The website URL: http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first
 Here is our plan:
 - Confirm root URL has loaded, so does the inside iframe contents by checking the #myDiv is exiseted or not.
 - Click the button.
-- Confirm the data has loaded from back-end by checking <p> tag is existed or not.
+- Confirm the data has loaded from back-end by checking ```<p>``` tag is existed or not.
 - Output the data inside #myDiv which loaded from back-end.
 
 ### 1. Set target root url
