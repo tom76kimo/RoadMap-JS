@@ -19,8 +19,14 @@ var RoadMap = require('RoadMap').RoadMap;
 
 ##Example
 
-Let's load the w3c ajax example page and get the data from back-end after pressing the button.
-the website URL: http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first
+Let's load the w3schools ajax example page and get the data from back-end after pressing the button.
+The website URL: http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first
+
+Here is our plan:
+- Confirm root URL has loaded, so does the inside iframe contents by checking the #myDiv is exiseted or not.
+- Click the button.
+- Confirm the data has loaded from back-end by checking <p> tag is existed or not.
+- Output the data inside #myDiv which loaded from back-end.
 
 ### 1. Set target root url
 ```RoadMap.setConfig({root: 'http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first'});```
