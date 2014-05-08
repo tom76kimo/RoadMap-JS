@@ -1,0 +1,22 @@
+{
+  "name": "RoadMap",
+  "version": "1.0.0",
+  "description": "Tool for crawling the websites which using ajax to load data.",
+  "main": "main.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "es6-promise": "~1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Web",
+    "Crawling"
+  ],
+  "author": "tom76kimo",
+  "license": "MIT"
+}
