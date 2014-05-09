@@ -93,6 +93,7 @@ RoadMap.run();
 ### 5. Save the file and Run
 save as ```example.js```
 then
-```Phantomjs example.js```
+
+```$ Phantomjs example.js```
 
 You can get this example code at ```examples/pressButton.js```
