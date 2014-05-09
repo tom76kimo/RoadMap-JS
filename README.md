@@ -20,7 +20,7 @@ var RoadMap = require('RoadMap').RoadMap;
 
 ### Set steps
 For every step, there are two function you need to specify: ```condition``` and ```nextStep```.
-- ```condition``` is use for setting the situation that you think this step is ready. ex. when the loading image is ```display: none```, I think this page is ready.
+- ```condition``` is use for setting the situation that you think this step is ready. ex. when the loading image is ```display: none```, I think this page is ready. ```condition``` needs to return a boolean. ```true``` means ready, ```false``` means not.
 - ```nextStep``` is use for when page is ready what you are going to do. ex. the page is ready, then I click the button and wait for the data appear. Then you may set the second step with condition to confirm the data appearing. 
 
 ##Example
@@ -33,6 +33,11 @@ Here is our plan:
 - Click the button.
 - Confirm the data has loaded from back-end by checking ```<p>``` tag is existed or not.
 - Output the data inside #myDiv which loaded from back-end.
+
+Remember:
+
+1. You can only manipulate the DOM inside the domHandle's callback function.
+2. Condition function need to return a boolean value for RoadMap know is the AJAX finished or not.
 
 ### 1. Set target root url
 ```RoadMap.setConfig({root: 'http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first'});```
@@ -97,3 +102,7 @@ then
 ```$ Phantomjs example.js```
 
 You can get this example code at ```examples/pressButton.js```
+
+## More examples
+
+[Examples](https://github.com/tom76kimo/RoadMap-JS/wiki/Examples)
