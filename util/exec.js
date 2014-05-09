@@ -3,7 +3,7 @@ var Promise = require('es6-promise').Promise,
 function execSteps(funcs, endFunction) {
     funcs.reverse();
     var promises = [];
-    endFunction = endFunction || function () {console.log('Queue is over');};
+    endFunction = endFunction || function () {console.log('All things done');};
 
     //recursive function for executing async function orderly
     var execCore = function (n) {
