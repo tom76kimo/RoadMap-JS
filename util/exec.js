@@ -1,6 +1,6 @@
 var Promise = require('es6-promise').Promise,
     waitFor = require('./waitFor').waitFor;
-function execSteps(funcs, endFunction) {
+function execSteps(funcs, endFunction, timeout) {
     funcs.reverse();
     var promises = [];
     endFunction = endFunction || function () {console.log('All things done');};
@@ -11,7 +11,7 @@ function execSteps(funcs, endFunction) {
             waitFor(funcs[n].condition, function () {
                 funcs[n].nextStep();
                 resolve();
-            });
+            }, timeout);
         });
         promises[n].then(function () {
             if (funcs[n - 1]) {

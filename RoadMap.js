@@ -11,6 +11,8 @@ page.settings.webSecurityEnabled = false;
 
 var RoadMap = {};
 RoadMap.core = {};
+RoadMap.core.timeout = 3000;
+
 RoadMap.setConfig = function (config) {
     if (typeof config !== 'object' && config.length !== undefined) {
         console.log('config data should be an object');
@@ -19,6 +21,7 @@ RoadMap.setConfig = function (config) {
 
     config.viewportSize && (page.viewportSize = config.viewportSize);
     config.root && (this.core.root = config.root);
+    config.timeout && (this.core.timeout = config.timeout);
 };
 
 RoadMap.setSteps = function (steps) {
@@ -53,10 +56,10 @@ RoadMap.run = function () {
     page.open(this.core.root, function (status) {
         if (window.$ === undefined) {
             page.includeJs('//code.jquery.com/jquery-1.11.0.min.js', function () {
-                execSteps(self.core.steps, self.core.endFunction);
+                execSteps(self.core.steps, self.core.endFunction, self.core.timeout);
             });
         } else {
-            execSteps(self.core.steps, self.core.endFunction);
+            execSteps(self.core.steps, self.core.endFunction, self.core.timeout);
         }
     }); 
 };

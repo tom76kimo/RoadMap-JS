@@ -12,9 +12,10 @@
  */
 var stepCounter = 1;
 function waitFor(testFx, onReady, timeOutMillis) {
-    var maxtimeOutMillis = timeOutMillis ? timeOutMillis : 5000, //< Default Max Timout is 3s
+    var maxtimeOutMillis = timeOutMillis || 5000, //< Default Max Timout is 3s
         start = new Date().getTime(),
         condition = false;
+        
         setTimeout(function () {
             var interval = setInterval(function () {
                 if ( (new Date().getTime() - start < maxtimeOutMillis) && !condition ) {
@@ -23,7 +24,7 @@ function waitFor(testFx, onReady, timeOutMillis) {
                 } else {
                     if (!condition) {
                         // If condition still not fulfilled (timeout but condition is 'false')
-                        console.log("step" + stepCounter + " timeout, process terminated.");
+                        console.log("step" + stepCounter + " timeout, process terminated. Maybe you can set a longer timeout interval with RoadMap.setConfig().");
                         phantom.exit(1);
                     } else {
                         // Condition fulfilled (timeout and/or condition is 'true')
