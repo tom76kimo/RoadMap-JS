@@ -10,7 +10,7 @@ steps.push({
     condition: function () {
         //ensure the iframe is ready by checking the #myDiv is existed
         return RoadMap.domHandle(function () {
-            return ($('iframe').contents().find('#myDiv') !== null);
+            return ($('iframe').contents().find('#myDiv').length > 0);
         });
     },
     nextStep: function () {
@@ -24,7 +24,7 @@ steps.push({
 steps.push({
     condition: function () {
         return RoadMap.domHandle(function () {
-            return ($('iframe').contents().find('#myDiv').find('p') !== null);
+            return ($('iframe').contents().find('#myDiv').find('p').length > 0);
         });
     },
     nextStep: function () {
