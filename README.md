@@ -8,8 +8,10 @@ Depends on more and more web applications come out, there are many web page buil
 RoadMap.js provide a way to easily crawl the applications that you only need to tell it every step you want it to do, like human manipulate the browsers. ```ex. load page -> click button -> get callback data -> click another button....```
 
 ##Requirements
-- Nodejs 
-- PhantomJS 1.9.x up
+
+You need to have following framework installed:
+- [Nodejs](http://nodejs.org/)
+- [PhantomJS 1.9.x up](http://phantomjs.org/)
 
 ##Usage
 
