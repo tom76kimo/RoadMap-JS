@@ -1,7 +1,7 @@
 var Promise = require('es6-promise').Promise,
     waitFor = require('./waitFor').waitFor;
 function execSteps(funcs, endFunction, timeout) {
-    funcs.reverse();
+    //funcs.reverse();
     var promises = [];
     endFunction = endFunction || function () {console.log('All things done');};
 
@@ -14,8 +14,8 @@ function execSteps(funcs, endFunction, timeout) {
             }, timeout);
         });
         promises[n].then(function () {
-            if (funcs[n - 1]) {
-                execCore(n - 1);
+            if (funcs[(n + 1)]) {
+                execCore(n + 1);
             } else {
                 endFunction();
                 phantom.exit();
@@ -23,7 +23,7 @@ function execSteps(funcs, endFunction, timeout) {
         });
     };
 
-    execCore(funcs.length - 1);
+    execCore(0);
 }
 
 
