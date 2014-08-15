@@ -22,8 +22,8 @@ var RoadMap = require('RoadMap').RoadMap;
 
 ### Set steps
 For every step, there are two function you need to specify: ```condition``` and ```nextStep```.
-- ```condition``` is use for setting the situation that you think this step is ready. ex. when the loading image is ```display: none```, I think this page is ready. ```condition``` needs to return a boolean. ```true``` means ready, ```false``` means not.
-- ```nextStep``` is use for when page is ready what you are going to do. ex. the page is ready, then I click the button and wait for the data appear. Then you may set the second step with condition to confirm the data appearing. 
+- ```condition``` is used for setting the situation that you think this step is ready. ex. when the loading image is ```display: none```, I think this page is ready. ```condition``` needs to return a boolean. ```true``` means ready, ```false``` means not.
+- ```nextStep``` is used for when page is ready what you are going to do. ex. the page is ready, then I click the button and wait for the data appear. Then you may set the second step with condition to confirm the data appearing. 
 
 ##Example
 
